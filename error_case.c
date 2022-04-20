@@ -6,7 +6,7 @@
 /*   By: clora-ro <clora-ro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 14:10:01 by clora-ro          #+#    #+#             */
-/*   Updated: 2022/02/21 10:06:23 by clora-ro         ###   ########lyon.fr   */
+/*   Updated: 2022/04/20 16:25:08 by clora-ro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ char	**check_join(int count, char **str)
 	char	**str_b;
 
 	temp = ft_strdup("");
+	if (!temp)
+		return (NULL);
 	i = 1;
 	if (count > 1)
 	{
@@ -49,11 +51,10 @@ int	check_double(t_stack st)
 	int	j;
 	int	count;
 
-	i = 0;
 	j = 0;
 	count = 0;
 	tab = ft_strcalc(st);
-	count = count_stack (st);
+	count = count_stack(st);
 	while (j < count - 1)
 	{
 		i = 0;
@@ -62,20 +63,24 @@ int	check_double(t_stack st)
 			if (i == j)
 				i++;
 			if (st->value == tab[i])
-				return (0);
+				return (free_tab_stack(tab, st));
 			i++;
 		}
 		st = st->next;
 		j++;
 	}
+	free(tab);
 	return (1);
 }
 
 int	check_count(int count, t_stack st)
 {
+	t_stack	temp;
+
+	temp = st;
 	if (count == 0 || count == 1)
 		return (0);
-	if (check_double(st) == 0)
+	if (check_double(temp) == 0)
 	{
 		ft_putendl_fd("Error", 2);
 		return (0);
@@ -90,8 +95,7 @@ long int	check_atoi(const char *str)
 
 	min = -2147483648;
 	max = 2147483647;
-	if (ft_atoi(str) > max
-		|| ft_atoi(str) < min)
+	if (ft_atoi(str) > max || ft_atoi(str) < min)
 		return_error();
 	return (ft_atoi(str));
 }

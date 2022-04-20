@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	swap_stack(t_stack *st)
+void	swap_stack(t_stack *st, int j)
 {
 	t_stack	temp;
 
@@ -24,12 +24,17 @@ void	swap_stack(t_stack *st)
 	temp->next = *st;
 	*st = temp;
 	(*st)->next->prev = *st;
+	if (j == 1)
+		ft_putendl_fd("sa", 1);
+	else if (j == 2)
+		ft_putendl_fd("sb", 1);
 }
 
 void	ss_stack(t_stack *sta, t_stack *stb)
 {
-	swap_stack(sta);
-	swap_stack(stb);
+	swap_stack(sta, 3);
+	swap_stack(stb, 3);
+	ft_putendl_fd("ss", 1);
 }
 
 void	p_stack(t_stack *sta, t_stack *stb, int j)
@@ -49,7 +54,7 @@ void	p_stack(t_stack *sta, t_stack *stb, int j)
 	if (*sta)
 		(*sta)->prev = NULL;
 	if (j == 1)
-		printf("pb\n");
+		ft_putendl_fd("pb", 1);
 	else
-		printf("pa\n");
+		ft_putendl_fd("pa", 1);
 }

@@ -6,7 +6,7 @@
 /*   By: clora-ro <clora-ro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 19:27:36 by clora-ro          #+#    #+#             */
-/*   Updated: 2022/02/21 10:15:26 by clora-ro         ###   ########lyon.fr   */
+/*   Updated: 2022/04/12 16:47:11 by clora-ro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,16 @@ void	r_stack(t_stack *st, int j)
 	temp->next->next = NULL;
 	temp->next->prev = temp;
 	if (j == 1)
-		printf("ra\n");
+		ft_putendl_fd("ra", 1);
 	else
-		printf("rb\n");
+		ft_putendl_fd("rb", 1);
 }
 
 void	double_r_stack(t_stack *sta, t_stack *stb)
 {
 	r_stack(sta, 1);
 	r_stack(stb, 2);
-	printf("rr\n");
+	ft_putendl_fd("rr", 1);
 }
 
 void	rr_stack(t_stack *st, int j)
@@ -53,14 +53,14 @@ void	rr_stack(t_stack *st, int j)
 	temp->next->prev = temp;
 	*st = temp;
 	if (j == 1)
-		printf("rra\n");
+		ft_putendl_fd("rra", 1);
 	else
-		printf("rrb\n");
+		ft_putendl_fd("rrb", 1);
 }
 
 void	double_rr_stack(t_stack *sta, t_stack *stb)
 {
 	rr_stack(sta, 1);
 	rr_stack(stb, 2);
-	printf("rrr\n");
+	ft_putendl_fd("rrr", 1);
 }

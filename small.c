@@ -98,3 +98,31 @@ void	up_smaller(t_stack *sta, int i)
 		}
 	}
 }
+
+void	up_smaller_a(t_stack *sta, int i)
+{
+	int	roll;
+	int	pos;
+
+	if (!sta || !*sta)
+		return ;
+	pos = search_smaller(*sta, ft_strcalc(*sta), i);
+	if (pos + 1 > pos_median(*sta))
+	{
+		roll = stack_lenght(*sta) - search_smaller(*sta, ft_strcalc(*sta), i);
+		while (roll > 0)
+		{
+			rr_stack(sta, 1);
+			roll--;
+		}	
+	}
+	else
+	{
+		roll = search_smaller(*sta, ft_strcalc(*sta), i);
+		while (roll > 0)
+		{
+			r_stack(sta, 1);
+			roll--;
+		}
+	}
+}

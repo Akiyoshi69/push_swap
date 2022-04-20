@@ -29,16 +29,21 @@ StackElement	*push_stack(t_stack st, long int x);
 t_stack			pop_stack(t_stack st);
 int				stack_lenght(t_stack st);
 t_stack			clear_stack(t_stack st);
+t_stack			end_stack(t_stack st);
+int				free_return(int *tab);
 
 int				check_sorted(t_stack st);
 int				count_stack(t_stack st);
+int				free_str(char **str);
+int				free_str_stack(char **str, t_stack sta);
+int				free_tab_stack(int *tab, t_stack sta);
 
 char			**check_join(int count, char **str);
 int				check_double(t_stack st);
 int				check_count(int count, t_stack st);
 long int		check_atoi(const char *str);
 
-void			swap_stack(t_stack *st);
+void			swap_stack(t_stack *st, int j);
 void			ss_stack(t_stack *sta, t_stack *stb);
 void			p_stack(t_stack *sta, t_stack *stb, int j);
 
@@ -66,6 +71,7 @@ int				pos_median(t_stack st);
 int				pos_stack(t_stack st, int value);
 int				search_smaller(t_stack st, int *chunk, int ch);
 void			up_smaller(t_stack *sta, int i);
+void			up_smaller_a(t_stack *sta, int i);
 
 void			ft_swap(int *a, int *b);
 int				*ft_strcalc(t_stack st);

@@ -31,11 +31,10 @@ int	main(int ac, char **av)
 	}
 	sta = push_stack(sta, check_atoi(str[i - 1]));
 	if (check_count(ac, sta) == 0)
-		return (0);
+		return (free_str_stack(str, sta));
 	if (check_sorted(sta) != 1)
 		return (0);
 	choose_sort(&sta);
 	sta = clear_stack(sta);
-	free (str);
-	return (0);
+	return (free_str(str));
 }

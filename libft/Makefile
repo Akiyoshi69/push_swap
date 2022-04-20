@@ -6,7 +6,7 @@
 #    By: clora-ro <clora-ro@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 16:50:37 by clora-ro          #+#    #+#              #
-#    Updated: 2022/02/21 10:18:08 by clora-ro         ###   ########lyon.fr    #
+#    Updated: 2022/04/20 16:41:15 by clora-ro         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,16 +60,17 @@ all : $(NAME)
 $(NAME) :	$(OBJS)
 			ar rcs $(NAME) $(OBJS)
 
-%.o : %.c libft.h
+%.o : %.c libft.h Makefile
 	$(CC) -c $< -o $@
 
 clean :
-	rm -rf $(OBJS)
+	rm -rf objs
+	rm -rf $(addprefix objs/, $(OBJS))
 
 fclean : clean
 	rm -rf $(NAME)
 
 re : fclean all
 
-.PHONY : all, clean, fclean
+.PHONY : all clean fclean
 			

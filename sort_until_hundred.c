@@ -14,25 +14,25 @@
 
 t_stack	sort_three(t_stack *sta)
 {
-	if ((*sta)->next->value < (*sta)->value
-		&& (*sta)->value < (*sta)->next->next->value)
-		swap_stack(sta);
-	else if ((*sta)->value < (*sta)->next->next->value
+	if ((*sta)->value < (*sta)->next->next->value
 		&& (*sta)->next->next->value < (*sta)->next->value)
 	{
-		swap_stack(sta);
+		swap_stack(sta, 1);
 		r_stack(sta, 1);
 	}
-	else if ((*sta)->next->value < (*sta)->next->next->value
-		&& (*sta)->next->next->value < (*sta)->value)
-		r_stack(sta, 1);
+	else if ((*sta)->next->value < (*sta)->value
+		&& (*sta)->value < (*sta)->next->next->value)
+		swap_stack(sta, 1);
 	else if ((*sta)->next->next->value < (*sta)->value
 		&& (*sta)->value < (*sta)->next->value)
 		rr_stack(sta, 1);
+	else if ((*sta)->next->value < (*sta)->next->next->value
+		&& (*sta)->next->next->value < (*sta)->value)
+		r_stack(sta, 1);
 	else if ((*sta)->next->next->value < (*sta)->next->value
 		&& (*sta)->next->value < (*sta)->value)
 	{
-		swap_stack(sta);
+		swap_stack(sta, 1);
 		rr_stack(sta, 1);
 	}
 	return (*sta);
@@ -40,13 +40,13 @@ t_stack	sort_three(t_stack *sta)
 
 t_stack	sort_five(t_stack *sta, t_stack *stb)
 {
-	up_smaller(sta, 2);
+	up_smaller_a(sta, 2);
 	p_stack(sta, stb, 1);
-	up_smaller(sta, 2);
+	up_smaller_a(sta, 2);
 	p_stack(sta, stb, 1);
 	sort_three(sta);
 	if ((*stb)->value < (*stb)->next->value)
-		swap_stack(stb);
+		swap_stack(stb, 2);
 	p_stack(stb, sta, 2);
 	p_stack(stb, sta, 2);
 	return (*sta);

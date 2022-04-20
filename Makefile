@@ -6,13 +6,14 @@
 #    By: clora-ro <clora-ro@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/07 16:39:23 by clora-ro          #+#    #+#              #
-#    Updated: 2022/02/21 12:54:34 by clora-ro         ###   ########lyon.fr    #
+#    Updated: 2022/04/20 15:35:45 by clora-ro         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
 LIBFT_DIR = libft
+
 
 SRCS =	chunk_eleven_option.c	\
 		chunk_eleven.c			\
@@ -35,6 +36,7 @@ OBJS	=	$(SRCS:.c=.o)
 
 CC		=	gcc 
 
+# CFLAGS	= 	-Wall -Werror -Wextra -fsanitize=address -g3
 CFLAGS	= 	-Wall -Werror -Wextra
 
 RM		= 	rm -f

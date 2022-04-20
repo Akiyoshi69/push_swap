@@ -6,7 +6,7 @@
 /*   By: clora-ro <clora-ro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 11:17:29 by clora-ro          #+#    #+#             */
-/*   Updated: 2022/02/21 11:34:43 by clora-ro         ###   ########lyon.fr   */
+/*   Updated: 2022/04/12 17:13:00 by clora-ro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ t_stack	sort_other(t_stack *sta, t_stack *stb)
 	}
 	if (stack_lenght(*sta) == 4)
 	{
-		up_smaller(sta, 2);
+		up_smaller_a(sta, 2);
 		p_stack(sta, stb, 1);
 		sort_three(sta);
 		p_stack(stb, sta, 2);
