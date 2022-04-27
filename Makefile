@@ -6,7 +6,7 @@
 #    By: clora-ro <clora-ro@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/07 16:39:23 by clora-ro          #+#    #+#              #
-#    Updated: 2022/04/27 12:45:33 by clora-ro         ###   ########lyon.fr    #
+#    Updated: 2022/04/27 19:05:46 by clora-ro         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRCS =	chunk_eleven_option.c	\
 		chunk_five_option.c		\
 		chunk_five.c			\
 		error_case.c			\
+		free.c					\
 		ft_median.c				\
 		init_a.c				\
 		init_b.c				\
@@ -52,7 +53,7 @@ all		: libft $(NAME)
 libft	: 
 		$(MAKE) -C libft
 
-$(NAME)	:	$(addprefix objs/, $(OBJS)) 
+$(NAME)	:	$(addprefix objs/, $(OBJS)) libft/libft.a
 			$(CC)  $(CFLAGS) -o $(NAME) $(addprefix objs/, $(OBJS)) libft/libft.a
 
 clean 	: 

@@ -39,16 +39,20 @@ t_stack	push_stack(t_stack st, long int x)
 	return (element);
 }
 
-void	print_stack(t_stack st)
+t_stack	pop_stack(t_stack st)
 {
+	StackElement	*element;
+
 	if (stack_empty(st))
-	{
-		printf("Rien a afficher, la pile est vide.\n");
-		return ;
-	}
+		return (new_stack());
+	element = st->next;
+	free (st);
+	return (element);
+}
+
+t_stack	clear_stack(t_stack st)
+{
 	while (!stack_empty(st))
-	{
-		printf("[%d]\n", st->value);
-		st = st->next;
-	}
+		st = pop_stack(st);
+	return (new_stack());
 }

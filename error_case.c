@@ -6,7 +6,7 @@
 /*   By: clora-ro <clora-ro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 14:10:01 by clora-ro          #+#    #+#             */
-/*   Updated: 2022/04/27 15:50:43 by clora-ro         ###   ########lyon.fr   */
+/*   Updated: 2022/04/27 18:50:42 by clora-ro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,19 @@ char	**check_join(int count, char **str)
 	temp = ft_strdup("");
 	if (!temp)
 		return (NULL);
-	i = 1;
+	i = 0;
 	if (count > 1)
 	{
-		while (str[i])
+		while (str[++i])
 		{
 			if (!ft_strlen(str[i]) || ft_check_num(str[i]) == 0)
-				return (ft_return_error(temp));
+				return (free_return_error(temp));
 			temp = ft_strjoin_free(temp, str[i]);
 			temp = ft_strjoin_free(temp, " ");
-			i++;
 		}
 		str_b = ft_split(temp, ' ');
+		if (str_b[0] == NULL)
+			return (free_return_error(temp));
 		free (temp);
 	}
 	else

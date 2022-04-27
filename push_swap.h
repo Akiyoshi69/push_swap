@@ -25,20 +25,23 @@ typedef struct s_element
 t_stack			new_stack(void);
 int				stack_empty(t_stack st);
 StackElement	*push_stack(t_stack st, long int x);
-char			**ft_return_error(char *temp);
-int				ft_count(char *str);
-
 t_stack			pop_stack(t_stack st);
-int				stack_lenght(t_stack st);
 t_stack			clear_stack(t_stack st);
-int				free_return(int *tab);
-int				ft_check_num(char *str);
 
-int				check_sorted(t_stack st);
+int				stack_lenght(t_stack st);
 int				count_stack(t_stack st);
+int				check_sorted(t_stack st);
+
 int				free_str(char **str);
+int				free_return(int *tab);
+char			**free_return_error(char *temp);
 int				free_str_stack(char **str, t_stack sta);
 int				free_tab_stack(int *tab, t_stack sta);
+
+int				ft_count(char *str);
+int				ft_check_space(char *str);
+int				ft_check_double_math(char *str);
+int				ft_check_num(char *str);
 
 char			**check_join(int count, char **str);
 int				check_double(t_stack st);
@@ -55,7 +58,6 @@ void			rr_stack(t_stack *st, int j);
 void			double_rr_stack(t_stack *sta, t_stack *stb);
 
 void			choose_sort(t_stack *sta);
-int				ft_check_double_math(char *str);
 
 t_stack			sort_three(t_stack *sta);
 t_stack			sort_five(t_stack *sta, t_stack *stb);

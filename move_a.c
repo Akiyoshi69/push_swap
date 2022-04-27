@@ -58,23 +58,3 @@ void	p_stack(t_stack *sta, t_stack *stb, int j)
 	else
 		ft_putendl_fd("pa", 1);
 }
-
-char	**ft_return_error(char *temp)
-{
-	char	**str;
-
-	str = NULL;
-	free (temp);
-	ft_putendl_fd("Error", 2);
-	return (0);
-}
-
-int	ft_count(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
