@@ -29,3 +29,20 @@ void	choose_sort(t_stack *sta)
 		sort_five_hundred(sta, &stb);
 	stb = clear_stack(stb);
 }
+
+int	ft_check_double_math(char *str)
+{
+	int		i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == '+' || str[i] == '-')
+		{
+			if (str[i + 1] == '+' || str[i + 1] == '-')
+				return (0);
+		}
+		i++;
+	}
+	return (1);
+}

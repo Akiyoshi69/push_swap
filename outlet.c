@@ -6,7 +6,7 @@
 /*   By: clora-ro <clora-ro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 19:26:15 by clora-ro          #+#    #+#             */
-/*   Updated: 2022/04/20 16:03:48 by clora-ro         ###   ########lyon.fr   */
+/*   Updated: 2022/04/27 14:24:21 by clora-ro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ int	free_str_stack(char **str, t_stack sta)
 	while (str[i])
 		free(str[i++]);
 	free(str);
-	sta = end_stack(sta);
 	sta = clear_stack(sta);
 	return (0);
 }

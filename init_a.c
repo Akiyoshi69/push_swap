@@ -38,3 +38,17 @@ t_stack	push_stack(t_stack st, long int x)
 		st->prev = element;
 	return (element);
 }
+
+void	print_stack(t_stack st)
+{
+	if (stack_empty(st))
+	{
+		printf("Rien a afficher, la pile est vide.\n");
+		return ;
+	}
+	while (!stack_empty(st))
+	{
+		printf("[%d]\n", st->value);
+		st = st->next;
+	}
+}

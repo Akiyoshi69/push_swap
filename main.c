@@ -22,6 +22,8 @@ int	main(int ac, char **av)
 	sta = new_stack();
 	i = 0;
 	str = check_join(ac, av);
+	if (!str)
+		return (0);
 	while (str[i])
 		i++;
 	while (i > 1)

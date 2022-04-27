@@ -6,7 +6,7 @@
 /*   By: clora-ro <clora-ro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 19:32:10 by clora-ro          #+#    #+#             */
-/*   Updated: 2022/04/20 16:21:25 by clora-ro         ###   ########lyon.fr   */
+/*   Updated: 2022/04/27 16:22:39 by clora-ro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,15 +45,25 @@ t_stack	clear_stack(t_stack st)
 	return (new_stack());
 }
 
-t_stack	end_stack(t_stack st)
-{
-	while (st != NULL)
-		st = st->next;
-	return (st);
-}
-
 int	free_return(int *tab)
 {
-	free (tab);
+	free(tab);
 	return (0);
+}
+
+int	ft_check_num(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (ft_check_double_math(str) == 0)
+		return (0);
+	while (str[i])
+	{
+		if (!(str[i] >= '0' && str[i] <= '9') && (str[i] != ' ')
+			&& (str[i] != '+') && (str[i] != '-'))
+			return (0);
+		i++;
+	}
+	return (1);
 }

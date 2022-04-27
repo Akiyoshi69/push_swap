@@ -6,7 +6,7 @@
 /*   By: clora-ro <clora-ro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 14:10:01 by clora-ro          #+#    #+#             */
-/*   Updated: 2022/04/20 16:25:08 by clora-ro         ###   ########lyon.fr   */
+/*   Updated: 2022/04/27 15:50:43 by clora-ro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ char	**check_join(int count, char **str)
 	{
 		while (str[i])
 		{
+			if (!ft_strlen(str[i]) || ft_check_num(str[i]) == 0)
+				return (ft_return_error(temp));
 			temp = ft_strjoin_free(temp, str[i]);
 			temp = ft_strjoin_free(temp, " ");
 			i++;
@@ -63,7 +65,7 @@ int	check_double(t_stack st)
 			if (i == j)
 				i++;
 			if (st->value == tab[i])
-				return (free_tab_stack(tab, st));
+				return (free_return(tab));
 			i++;
 		}
 		st = st->next;
