@@ -31,6 +31,7 @@ t_stack			clear_stack(t_stack st);
 int				stack_lenght(t_stack st);
 int				count_stack(t_stack st);
 int				check_sorted(t_stack st);
+char			**check_join_2(char *temp, char **str, char **str_b);
 
 int				free_str(char **str);
 int				free_return(int *tab);

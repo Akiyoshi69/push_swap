@@ -6,7 +6,7 @@
 #    By: clora-ro <clora-ro@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/07 16:39:23 by clora-ro          #+#    #+#              #
-#    Updated: 2022/04/27 19:05:46 by clora-ro         ###   ########lyon.fr    #
+#    Updated: 2022/05/03 13:11:57 by clora-ro         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,6 @@ OBJS	=	$(SRCS:.c=.o)
 
 CC		=	gcc 
 
-# CFLAGS	= 	-Wall -Werror -Wextra -fsanitize=address -g3
 CFLAGS	= 	-Wall -Werror -Wextra
 
 RM		= 	rm -f
