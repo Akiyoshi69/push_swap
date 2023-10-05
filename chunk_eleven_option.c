@@ -29,26 +29,7 @@ int	count_chunk_eleven(t_stack st, int count)
 	return (i);
 }
 
-int	*altern_chunk_a(t_stack *st, int *chunk, int count)
-{
-	int	i;
-	int	len;
-	int	*tab;
-
-	i = 0;
-	len = stack_lenght(*st);
-	tab = ft_strcalc(*st);
-	ft_sort_int_tab(tab, len);
-	while (i < count_chunk_eleven(*st, 2))
-	{
-		chunk[i] = tab[i + (count_chunk_eleven(*st, 1) * (12 - count))];
-		i++;
-	}
-	free (tab);
-	return (chunk);
-}
-
-int	*altern_chunk_b(t_stack *st, int *chunk, int count, int v)
+int	*altern_chunk_sort(t_stack *st, int *chunk, int count, int v, int index)
 {
 	int	i;
 	int	len;
@@ -60,26 +41,12 @@ int	*altern_chunk_b(t_stack *st, int *chunk, int count, int v)
 	ft_sort_int_tab(tab, len);
 	while (i < count_chunk_eleven(*st, count))
 	{
-		chunk[i] = tab[i + (count_chunk_eleven(*st, count) * (12 - count + v))];
-		i++;
-	}
-	free (tab);
-	return (chunk);
-}
-
-int	*altern_chunk_c(t_stack *st, int *chunk, int count, int v)
-{
-	int	i;
-	int	len;
-	int	*tab;
-
-	i = 0;
-	len = stack_lenght(*st);
-	tab = ft_strcalc(*st);
-	ft_sort_int_tab(tab, len);
-	while (i < count_chunk_eleven(*st, count))
-	{
-		chunk[i] = tab[i + (count_chunk_eleven(*st, count) * (count - v - 1))];
+		if (index == 1)
+			chunk[i] = tab[i + (count_chunk_eleven(*st, 1) * (12 - count))];
+		else if (index == 2)
+			chunk[i] = tab[i + (count_chunk_eleven(*st, count) * (12 - count + v))];
+		else if (index == 3)
+			chunk[i] = tab[i + (count_chunk_eleven(*st, count) * (count - v - 1))];
 		i++;
 	}
 	free (tab);
@@ -100,15 +67,15 @@ int	*altern_chunk(t_stack *st, int *chunk, int count)
 		return (NULL);
 	if (count == 2)
 	{
-		altern_chunk_a(st, chunk, count);
+		altern_chunk_sort(st, chunk, count, v, 1);
 		v++;
 	}
 	else if (count % 2 == 0)
 	{
-		altern_chunk_b(st, chunk, count, v);
+		altern_chunk_sort(st, chunk, count, v, 2);
 		v++;
 	}
 	else
-		altern_chunk_c(st, chunk, count, v);
+		altern_chunk_sort(st, chunk, count, v, 3);
 	return (chunk);
 }

@@ -40,9 +40,9 @@ t_stack	sort_three(t_stack *sta)
 
 t_stack	sort_five(t_stack *sta, t_stack *stb)
 {
-	up_smaller_a(sta, 2);
+	up_smaller(sta, 2, 1);
 	p_stack(sta, stb, 1);
-	up_smaller_a(sta, 2);
+	up_smaller(sta, 2, 1);
 	p_stack(sta, stb, 1);
 	sort_three(sta);
 	if ((*stb)->value < (*stb)->next->value)
@@ -52,7 +52,7 @@ t_stack	sort_five(t_stack *sta, t_stack *stb)
 	return (*sta);
 }
 
-void	sort_hundred_a(t_stack *sta, t_stack *stb, int len, int count)
+void	sort_hundred_a(t_stack *sta, t_stack *stb, int len, int count, int index)
 {
 	int	i;
 
@@ -60,23 +60,10 @@ void	sort_hundred_a(t_stack *sta, t_stack *stb, int len, int count)
 	is_chunk(sta, stb, count);
 	while (i < len)
 	{
-		up_smaller(stb, 1);
+		up_smaller(stb, 1, 2);
 		p_stack(stb, sta, 2);
-		i++;
-	}
-}
-
-void	sort_hundred_b(t_stack *sta, t_stack *stb, int len, int count)
-{
-	int	i;
-
-	i = 0;
-	is_chunk(sta, stb, count);
-	while (i < len)
-	{
-		up_smaller(stb, 2);
-		p_stack(stb, sta, 2);
-		r_stack(sta, 1);
+		if (index == 2)
+			r_stack(sta, 1);
 		i++;
 	}
 }
@@ -93,11 +80,11 @@ t_stack	sort_hundred(t_stack *sta, t_stack *stb)
 	while (count < 6)
 	{
 		if (count < 4)
-			sort_hundred_a(sta, stb, len, count);
+			sort_hundred_a(sta, stb, len, count, 1);
 		else if (count == 4)
-			sort_hundred_b(sta, stb, len, count);
+			sort_hundred_a(sta, stb, len, count, 2);
 		else
-			sort_hundred_b(sta, stb, lenn, count);
+			sort_hundred_a(sta, stb, lenn, count, 2);
 		count++;
 	}
 	return (*sta);

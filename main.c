@@ -18,14 +18,13 @@ int	main(int ac, char **av)
 	t_stack	sta;
 	char	**str;
 
-	str = NULL;
-	sta = new_stack();
 	i = 0;
 	str = check_join(ac, av);
 	if (!str)
 		return (0);
 	while (str[i])
 		i++;
+	sta = new_stack();
 	while (i > 1)
 	{
 		sta = push_stack(sta, check_atoi(str[i - 1]));

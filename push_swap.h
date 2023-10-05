@@ -28,6 +28,15 @@ StackElement	*push_stack(t_stack st, long int x);
 t_stack			pop_stack(t_stack st);
 t_stack			clear_stack(t_stack st);
 
+void			swap_stack(t_stack *st, int j);
+void			ss_stack(t_stack *sta, t_stack *stb);
+void			p_stack(t_stack *sta, t_stack *stb, int j);
+
+void			r_stack(t_stack *st, int j);
+void			double_r_stack(t_stack *sta, t_stack *stb);
+void			rr_stack(t_stack *st, int j);
+void			double_rr_stack(t_stack *sta, t_stack *stb);
+
 int				stack_lenght(t_stack st);
 int				count_stack(t_stack st);
 int				check_sorted(t_stack st);
@@ -49,35 +58,23 @@ int				check_double(t_stack st);
 int				check_count(int count, t_stack st);
 long int		check_atoi(const char *str);
 
-void			swap_stack(t_stack *st, int j);
-void			ss_stack(t_stack *sta, t_stack *stb);
-void			p_stack(t_stack *sta, t_stack *stb, int j);
-
-void			r_stack(t_stack *st, int j);
-void			double_r_stack(t_stack *sta, t_stack *stb);
-void			rr_stack(t_stack *st, int j);
-void			double_rr_stack(t_stack *sta, t_stack *stb);
-
 void			choose_sort(t_stack *sta);
 
 t_stack			sort_three(t_stack *sta);
 t_stack			sort_five(t_stack *sta, t_stack *stb);
-void			sort_hundred_a(t_stack *sta, t_stack *stb, int len, int count);
-void			sort_hundred_b(t_stack *sta, t_stack *stb, int len, int count);
+void			sort_hundred_a(t_stack *sta, t_stack *stb,
+					int len, int count, int index);
 t_stack			sort_hundred(t_stack *sta, t_stack *stb);
 
 void			sort_five_hundred_a(t_stack *sta, t_stack *stb,
-					int lenn, int count);
-void			sort_five_hundred_b(t_stack *sta, t_stack *stb,
-					int len, int count);
+					int lenn, int count, int index);
 t_stack			sort_five_hundred(t_stack *sta, t_stack *stb);
 t_stack			sort_other(t_stack *sta, t_stack *stb);
 
 int				pos_median(t_stack st);
 int				pos_stack(t_stack st, int value);
 int				search_smaller(t_stack st, int *chunk, int ch);
-void			up_smaller(t_stack *sta, int i);
-void			up_smaller_a(t_stack *sta, int i);
+void			up_smaller(t_stack *sta, int i, int index);
 
 void			ft_swap(int *a, int *b);
 int				*ft_strcalc(t_stack st);
@@ -89,23 +86,17 @@ int				check_chunk(int *tab, int st, int size_chunk);
 void			is_chunk(t_stack *sta, t_stack *stb, int count);
 
 int				*chunk_five(t_stack *st, int *chunk, int count);
-int				*chunk_five_a(t_stack *st, int count, int *chunk);
-int				*chunk_five_b(t_stack *st, int count, int *chunk);
+int				*chunk_five_a(t_stack *st, int count, int *chunk, int index);
 
 int				count_chunk_eleven(t_stack st, int count);
-int				*altern_chunk_a(t_stack *st, int *chunk, int count);
-int				*altern_chunk_b(t_stack *st, int *chunk, int count, int v);
-int				*altern_chunk_c(t_stack *st, int *chunk, int count, int v);
+int				*altern_chunk_sort(t_stack *st, int *chunk,
+					int count, int v, int index);
 int				*altern_chunk(t_stack *st, int *chunk, int count);
 
 void			is_chunk_max_a(t_stack *sta, t_stack *stb,
-					int count, int size_chunk);
+					int count, int size_chunk, int index);
 void			is_chunk_max_b(t_stack *sta, t_stack *stb,
-					int count, int size_chunk);
-void			is_chunk_max_c(t_stack *sta, t_stack *stb,
-					int count, int size_chunk);
-void			is_chunk_max_d(t_stack *sta, t_stack *stb,
-					int count, int size_chunk);
+					int count, int size_chunk, int index);
 void			is_chunk_max(t_stack *sta, t_stack *stb, int count);
 
 #endif

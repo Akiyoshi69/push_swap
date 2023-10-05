@@ -40,19 +40,15 @@ void	ss_stack(t_stack *sta, t_stack *stb)
 void	p_stack(t_stack *sta, t_stack *stb, int j)
 {
 	t_stack	temp;
-	t_stack	prev;
 
 	if (!sta || !*sta)
 		return ;
-	prev = NULL;
 	temp = (*sta)->next;
 	(*sta)->next = *stb;
 	if (stb && *stb)
 		(*stb)->prev = *sta;
 	*stb = *sta;
 	*sta = temp;
-	if (*sta)
-		(*sta)->prev = NULL;
 	if (j == 1)
 		ft_putendl_fd("pb", 1);
 	else

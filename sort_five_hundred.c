@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	sort_five_hundred_a(t_stack *sta, t_stack *stb, int lenn, int count)
+void	sort_five_hundred_a(t_stack *sta, t_stack *stb, int lenn, int count, int index)
 {
 	int	i;
 
@@ -20,23 +20,10 @@ void	sort_five_hundred_a(t_stack *sta, t_stack *stb, int lenn, int count)
 	is_chunk_max(sta, stb, count);
 	while (i < lenn)
 	{
-		up_smaller(stb, 2);
+		up_smaller(stb, 2, 2);
 		p_stack(stb, sta, 2);
-		r_stack(sta, 1);
-		i++;
-	}
-}
-
-void	sort_five_hundred_b(t_stack *sta, t_stack *stb, int len, int count)
-{
-	int	i;
-
-	i = 0;
-	is_chunk_max(sta, stb, count);
-	while (i < len)
-	{
-		up_smaller(stb, 1);
-		p_stack(stb, sta, 2);
+		if (index == 1)
+			r_stack(sta, 1);
 		i++;
 	}
 }
@@ -55,9 +42,9 @@ t_stack	sort_five_hundred(t_stack *sta, t_stack *stb)
 	while (count < 12)
 	{
 		if (count == 2)
-			sort_five_hundred_a(sta, stb, lenn, count);
+			sort_five_hundred_a(sta, stb, lenn, count, 1);
 		else
-			sort_five_hundred_b(sta, stb, len, count);
+			sort_five_hundred_a(sta, stb, len, count, 0);
 		count++;
 	}
 	while (i < len * 5 + lenn)
@@ -77,7 +64,7 @@ t_stack	sort_other(t_stack *sta, t_stack *stb)
 	}
 	if (stack_lenght(*sta) == 4)
 	{
-		up_smaller_a(sta, 2);
+		up_smaller(sta, 2, 1);
 		p_stack(sta, stb, 1);
 		sort_three(sta);
 		p_stack(stb, sta, 2);

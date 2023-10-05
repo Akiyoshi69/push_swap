@@ -71,7 +71,7 @@ int	search_smaller(t_stack st, int *chunk, int ch)
 	return (j);
 }
 
-void	up_smaller(t_stack *sta, int i)
+void	up_smaller(t_stack *sta, int i, int index)
 {
 	int	roll;
 	int	pos;
@@ -84,7 +84,7 @@ void	up_smaller(t_stack *sta, int i)
 		roll = stack_lenght(*sta) - search_smaller(*sta, ft_strcalc(*sta), i);
 		while (roll > 0)
 		{
-			rr_stack(sta, 2);
+			rr_stack(sta, index);
 			roll--;
 		}	
 	}
@@ -93,35 +93,7 @@ void	up_smaller(t_stack *sta, int i)
 		roll = search_smaller(*sta, ft_strcalc(*sta), i);
 		while (roll > 0)
 		{
-			r_stack(sta, 2);
-			roll--;
-		}
-	}
-}
-
-void	up_smaller_a(t_stack *sta, int i)
-{
-	int	roll;
-	int	pos;
-
-	if (!sta || !*sta)
-		return ;
-	pos = search_smaller(*sta, ft_strcalc(*sta), i);
-	if (pos + 1 > pos_median(*sta))
-	{
-		roll = stack_lenght(*sta) - search_smaller(*sta, ft_strcalc(*sta), i);
-		while (roll > 0)
-		{
-			rr_stack(sta, 1);
-			roll--;
-		}	
-	}
-	else
-	{
-		roll = search_smaller(*sta, ft_strcalc(*sta), i);
-		while (roll > 0)
-		{
-			r_stack(sta, 1);
+			r_stack(sta, index);
 			roll--;
 		}
 	}

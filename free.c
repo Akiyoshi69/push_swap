@@ -27,9 +27,6 @@ int	free_tab_stack(int *tab, t_stack sta)
 
 char	**free_return_error(char *temp)
 {
-	char	**str;
-
-	str = NULL;
 	free (temp);
 	ft_putendl_fd("Error", 2);
 	return (0);
