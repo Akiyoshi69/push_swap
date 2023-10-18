@@ -30,6 +30,6 @@ $ ./bin/visualizer
 ```
 ***
 ## Play
-To visualize the stacks, enter the value you want to generate, then click on `Shuffle`.
+To visualize the stacks, enter the value you want to generate, then click on `Shuffle`.  
 Enter the path `./../push_swap` and `Compute`
 It's your turn!  
