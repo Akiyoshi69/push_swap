@@ -27,7 +27,7 @@ $ cd build/
 $ cmake ..
 $ make
 $ ./bin/visualizer
-
+```
 ***
 ## Play
 To visualize the stacks, enter the value you want to generate, then click on `Shuffle`.
