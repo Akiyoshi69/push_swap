@@ -16,6 +16,7 @@ optimized data sorting.
 2. [Play](#play)
 ***
 ## Installation
+![](https://github.com/cloraronco/42_Push_swap/blob/master/push_swap_installationV1_GIF.gif)
 ```
 $ git clone https://github.com/cloraronco/42_Push_swap
 $ cd 42_Push_swap/
