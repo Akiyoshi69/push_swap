@@ -8,7 +8,7 @@ optimized data sorting.
 
 
 
-![](https://github.com/cloraronco/42_So_long/blob/master/solong_demoV2_GIF.gif)
+![](https://github.com/cloraronco/42_Push_swap/blob/master/push_swap_demoV1_GIF.gif)
 
 ***
 ## Table of Contents
@@ -31,5 +31,5 @@ $ ./bin/visualizer
 ***
 ## Play
 To visualize the stacks, enter the value you want to generate, then click on `Shuffle`.  
-Enter the path `./../push_swap` and `Compute`
+Enter the path `./../push_swap` and `Compute`.  
 It's your turn!  
